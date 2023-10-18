@@ -4,10 +4,9 @@
 <h1>Книга отзывов и предложений</h1>
 <div class="review-form">
     <h2>Оставить отзыв</h2>
-    <form action="" method="GET">
-        <p><input type="text" placeholder="Введите Ваше имя" name="name"></p>
-        <p><input type="text" placeholder="Введите адрес электронной почты" name="email"></p>
-        <p><textarea placeholder="Напишите здесь свой отзыв" cols="50" rows="5" name="review"></textarea></p>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
         <p><input type="submit" value = "Оставить отзыв"> </p>
     </form>
 </div>
