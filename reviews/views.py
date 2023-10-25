@@ -29,7 +29,21 @@ def reviews(request):
                 file.write(f'{name}|{email}|{review}|{rating}\n')
             return redirect('reviews')
 
-        else:
-            print(333333333)
-            form = ReviewForm()
-            return render(request, 'reviews.html', {'form':form})
+        with open('data.csv','w', encoding='UTF-8')as file:
+            reviews = file.readlines()
+            if len(reviews) > 0:
+                review_data_1 = reviews[0]
+                name_1 = review_data_1.split('|')[0]
+                email_1 = review_data_1.split('|')[1]
+                review_1 = review_data_1.split('|')[2]
+                rating_1 = review_data_1.split('|')[3]
+            else:
+                name_1 = ''
+                email_1 = ''
+                review_1 = ''
+                rating_1 = ''
+        print(333333333)
+        form = ReviewForm()
+        return render(request, 'reviews.html', {'form':form,'name_1': name_1, 'email_1': email_1, 'review_1': review_1, 'rating_1': rating_1})
+
+
