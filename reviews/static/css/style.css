@@ -14,6 +14,26 @@ margin-bottom:20px;
 font-size:20px;
 }
 
+.review{
+ border-bottom: 0.5px solid lightgrey;
+
+}
+
+.review-text{
+ font-size:large;
+
+}
+
+.user{
+    font-size: 15px;
+    font-style: italic;
+}
+
+.rating{
+color:green;
+font-weight:bolder;
+}
+
 input, textarea{
 margin-bottom:10px;
 background:blanchedalmond;
